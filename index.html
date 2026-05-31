@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contracts & Arbitration Experts SL</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
+
+:root{
+--bg:#141517;
+--card:rgba(28,29,33,0.55);
+--border:rgba(223,186,115,0.18);
+--gold:#dfba73;
+--text:#f3f4f6;
+--muted:#9ca3af;
+
+--font-serif:'Playfair Display',serif;
+--font-sans:'Inter',sans-serif;
+--font-accent:'Cinzel',serif;
+
+--space-1:8px;
+--space-2:12px;
+--space-3:20px;
+--space-4:32px;
+--space-5:48px;
+--space-6:80px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:var(--font-sans);
+line-height:1.7;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+.glass{
+background:var(--card);
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+border:1px solid var(--border);
+border-radius:14px;
+}
+
+/* =========================
+   HEADER + LOGO
+========================= */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(20,21,23,0.6);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container{
+max-width:1300px;
+margin:auto;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* ORIGINAL LUXURY LOGO STYLE */
+.logo{
+font-family:var(--font-accent);
+letter-spacing:3px;
+text-transform:uppercase;
+font-size:1.1rem;
+color:var(--text);
+text-decoration:none;
+}
+
+.logo span{
+color:var(--gold);
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-links a{
+color:var(--muted);
+text-decoration:none;
+font-size:0.9rem;
+}
+
+.cta-nav-btn{
+background:var(--gold);
+padding:10px 20px;
+border-radius:4px;
+text-decoration:none;
+color:#141517;
+font-weight:600;
+}
+
+/* =========================
+   HERO LAYOUT
+========================= */
+
+.hero{
+min-height:100vh;
+padding:140px 40px 60px;
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:60px;
+align-items:center;
+}
+
+/* LEFT HERO TEXT */
+.hero-tagline{
+color:var(--gold);
+font-family:var(--font-accent);
+letter-spacing:3px;
+font-size:0.8rem;
+text-transform:uppercase;
+}
+
+.hero h1{
+font-family:var(--font-serif);
+font-size:3.7rem;
+margin-top:10px;
+line-height:1.15;
+}
+
+.hero h1 em{
+color:var(--gold);
+}
+
+.hero-description{
+color:var(--muted);
+margin-top:20px;
+max-width:600px;
+}
+
+/* =========================
+   RIGHT HERO LOGO AREA
+========================= */
+
+.hero-graphic{
+display:flex;
+align-items:center;
+justify-content:center;
+height:340px;
+position:relative;
+}
+
+.logo-orb{
+width:280px;
+height:280px;
+border-radius:50%;
+border:1px dashed rgba(223,186,115,0.35);
+display:flex;
+align-items:center;
+justify-content:center;
+animation:spin 60s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.logo-core{
+position:absolute;
+width:120px;
+height:120px;
+border-radius:12px;
+background:var(--card);
+border:2px solid var(--gold);
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 30px rgba(223,186,115,0.15);
+}
+
+.logo-core div{
+font-family:var(--font-accent);
+text-align:center;
+font-size:1rem;
+color:var(--gold);
+letter-spacing:2px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+padding:var(--space-6) 40px;
+max-width:1300px;
+margin:auto;
+}
+
+.section-header{
+text-align:center;
+margin-bottom:var(--space-5);
+}
+
+.section-header h2{
+font-family:var(--font-serif);
+font-size:2.6rem;
+}
+
+.section-header h2 em{
+color:var(--gold);
+}
+
+/* GRID */
+.grid-3-col{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+/* CARDS */
+.elegant-card{
+padding:35px;
+border-radius:14px;
+background:var(--card);
+border:1px solid var(--border);
+backdrop-filter:blur(16px);
+transition:0.3s ease;
+}
+
+.elegant-card:hover{
+transform:translateY(-6px);
+border-color:rgba(223,186,115,0.4);
+}
+
+.elegant-card h3{
+margin-bottom:10px;
+font-family:var(--font-serif);
+}
+
+/* CONTACT */
+.contact-section{
+padding:50px;
+border-radius:14px;
+background:var(--card);
+border:1px solid var(--border);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-detail-item{
+margin:15px 0;
+}
+
+.contact-detail-item label{
+color:var(--gold);
+font-size:0.8rem;
+text-transform:uppercase;
+}
+
+/* FORM */
+.form-control{
+width:100%;
+padding:12px;
+margin:8px 0;
+background:rgba(0,0,0,0.4);
+border:1px solid #333;
+color:white;
+border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+font-size:0.75rem;
+color:var(--muted);
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.hero,.contact-grid{
+grid-template-columns:1fr;
+}
+.hero h1{font-size:2.6rem}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="nav-container">
+
+<div class="logo">
+Contracts <span>& Arbitration</span> Experts SL
+</div>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#claims">Claims</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a class="cta-nav-btn" href="#contact">Consult Expert</a>
+
+</div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+<!-- LEFT SIDE TEXT -->
+<div>
+
+<span class="hero-tagline">Contracts & Arbitration Experts SL</span>
+
+<h1>
+Resolving disputes with <em>precision</em> and authority
+</h1>
+
+<p class="hero-description">
+We provide structured technical analysis, arbitration support, and financial dispute assessment across complex contractual environments within UK, EU, and international frameworks.
+</p>
+
+</div>
+
+<!-- RIGHT SIDE LOGO GRAPHIC -->
+<div class="hero-graphic glass">
+
+<div class="logo-orb"></div>
+
+<div class="logo-core">
+<div>
+Contracts<br>& Arbitration<br>Experts SL
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+
+<div class="section-header">
+<h2>Our <em>Services</em></h2>
+</div>
+
+<div class="grid-3-col">
+
+<div class="elegant-card">
+<h3>Technical Evaluation</h3>
+<p>Engineering analysis identifying contractual and structural inconsistencies.</p>
+</div>
+
+<div class="elegant-card">
+<h3>Dispute Resolution</h3>
+<p>Structured arbitration support for financial and contractual conflicts.</p>
+</div>
+
+<div class="elegant-card">
+<h3>Expert Witness Reports</h3>
+<p>Independent documentation for legal and arbitration proceedings.</p>
+</div>
+
+<div class="elegant-card">
+<h3>Financial Review</h3>
+<p>Assessment of financial agreements and intermediary conduct.</p>
+</div>
+
+<div class="elegant-card">
+<h3>Timeshare Evaluation</h3>
+<p>Specialist review of holiday ownership and membership structures.</p>
+</div>
+
+<div class="elegant-card">
+<h3>Exit Strategy</h3>
+<p>Guidance on structured contract exit and resolution pathways.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CLAIMS -->
+<section id="claims">
+
+<div class="section-header">
+<h2>Types of <em>Claim</em></h2>
+</div>
+
+<div class="grid-3-col">
+
+<div class="elegant-card">
+<h3>Contractual Non-Compliance</h3>
+<p>
+Cases where agreed contractual obligations, service standards, or technical specifications have not been met as originally defined in the agreement.
+</p>
+</div>
+
+<div class="elegant-card">
+<h3>Financial Agreement Disputes</h3>
+<p>
+Disputes arising from financial products or agreements, including intermediary conduct, mis-sold arrangements, or unclear contractual execution.
+</p>
+</div>
+
+<div class="elegant-card">
+<h3>Consumer Misrepresentation</h3>
+<p>
+Situations involving misleading, incomplete, or unclear information provided at the point of sale or during contract formation.
+</p>
+</div>
+
+<div class="elegant-card">
+<h3>Timeshare & Holiday Ownership</h3>
+<p>
+Claims involving timeshare contracts, holiday clubs, fractional ownership schemes, and related long-term membership structures.
+</p>
+</div>
+
+<div class="elegant-card">
+<h3>Exit & Relinquishment Issues</h3>
+<p>
+Cases where clients face difficulty exiting, cancelling, or transferring long-term contractual commitments or membership agreements.
+</p>
+</div>
+
+<div class="elegant-card">
+<h3>Documentation & Structural Issues</h3>
+<p>
+Disputes caused by missing, inconsistent, or unclear contractual documentation requiring technical review and clarification.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="section-header">
+<h2>No Win <em>No Fee</em> Specialists</h2>
+</div>
+
+<div class="elegant-card">
+
+<p>
+With over 40 years of combined experience, we provide structured analysis of complex contractual and financial disputes across multiple jurisdictions.
+</p>
+
+<br>
+
+<p>
+We assist clients reviewing holiday ownership, financial agreements, and consumer contracts.
+</p>
+
+<br>
+
+<p>
+We operate on a “No Win, No Fee” basis subject to case acceptance and agreed terms.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="section-header">
+<h2>Contact <em>Us</em></h2>
+</div>
+
+<div class="contact-section glass">
+
+<div class="contact-grid">
+
+<div>
+<h3>Contracts & Arbitration Experts SL</h3>
+
+<div class="contact-detail-item">
+<label>Email</label>
+<div>info@contractsandarbitration.org</div>
+</div>
+
+<div class="contact-detail-item">
+<label>Phone</label>
+<div>0207 183 0267 / 0800 8021709</div>
+</div>
+
+<div class="contact-detail-item">
+<label>Company No.</label>
+<div>B76747120</div>
+</div>
+
+<div class="contact-detail-item">
+<label>Locations</label>
+<div>Tenerife, Spain<br>Kington, UK</div>
+</div>
+
+</div>
+
+<div>
+<input class="form-control" placeholder="Name">
+<input class="form-control" placeholder="Email">
+<textarea class="form-control" placeholder="Message"></textarea>
+
+<a class="cta-nav-btn" href="mailto:info@contractsandarbitration.org">
+Send Message
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+Contracts & Arbitration Experts SL • B76747120 • info@contractsandarbitration.org • 0207 183 0267
+</footer>
+
+</body>
+</html>
